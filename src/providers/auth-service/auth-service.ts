@@ -31,6 +31,28 @@ export class AuthServiceProvider {
     }
   }
 
+  public register(credentials) {
+    if (credentials.email === null || credentials.password === null ) {
+      return Observable.throw('Please insert credentials');
+    } else {
+      //Should post data to backend
+      return Observable.create(observer => {
+        observer.next(true);
+        observer.complete();
+      })
+    }
+  }
 
+  public getUserInfo() : User {
+    return this.currentUser;
+  }
+
+  public logout() {
+    return Observable.create(observer => {
+      this.currentUser = null;
+      observer.next(true);
+      observer.complete();
+    })
+  }
 
 }
