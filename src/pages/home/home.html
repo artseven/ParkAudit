@@ -14,4 +14,84 @@
 <ion-content class="home" padding>
   <h3>Welcome inside, {{username}}!</h3>
   Your Email is: {{email}}
+
+  <ion-card>
+    <ion-card-header>
+      Property Audit
+    </ion-card-header>
+    <ion-list>
+
+      <ion-item>
+        <ion-label>Start Time</ion-label>
+        <ion-datetime
+        displayFormat="h:mm A"
+        pickerFormat="h mm A"
+        [(ngModel)]=timeIn>
+        </ion-datetime>
+        {{ timeIn }}
+      </ion-item>
+
+      <ion-item>
+        <ion-label>End Time</ion-label>
+        <ion-datetime
+        displayFormat="h:mm A"
+        pickerFormat="h mm A"
+        [(ngModel)]=timeOut>
+        </ion-datetime>
+        {{ timeOut }}
+      </ion-item>
+
+      <ion-item>
+        <ion-label>First Ticket</ion-label>
+        <ion-input style="text-align: right" placeholder="Ticket Input"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Last Ticket</ion-label>
+        <ion-input style="text-align: right" placeholder="Ticket Input"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Keys</ion-label>
+        <ion-input style="text-align: right" type="number" placeholder="0"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Validations</ion-label>
+        <ion-input style="text-align: right" type="number" placeholder="0"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Cars</ion-label>
+        <ion-input style="text-align: right" type="number" placeholder="0"></ion-input>
+      </ion-item>
+
+      <ion-item>
+          <ion-label>Type of Visit</ion-label>
+          <ion-select>
+            <ion-option value="f" selected="true">Regular</ion-option>
+            <ion-option value="m">Random</ion-option>
+          </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Rate</ion-label>
+        <ion-input style="text-align: right" type="number" placeholder="0"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Notes</ion-label>
+        <ion-input placeholder="Comments and notes">
+
+        </ion-input>
+      </ion-item>
+    </ion-list>
+
+    <button block ion-button color="secondary">
+      Submit
+    </button>
+  </ion-card>
+
+  <!-- <ion-searchbar animated=true>
+  </ion-searchbar> -->
 </ion-content>
