@@ -17,7 +17,7 @@
 
     <ion-card>
         <ion-card-header>
-          Property Audit
+            Property Audit
         </ion-card-header>
         <ion-list inset>
 
@@ -90,24 +90,51 @@
             <ion-item>
                 <ion-label>Type of Visit</ion-label>
                 <ion-select>
-                    <ion-option value="f" selected="true">Regular</ion-option>
-                    <ion-option value="m">Random</ion-option>
+                    <ion-option value="f" selected="true">Service Audit</ion-option>
+                    <ion-option value="m">Field Audit</ion-option>
                 </ion-select>
             </ion-item>
 
-            <ion-item>
+            <ion-list radio-group [(ngModel)]="rate.choice">
+                <ion-list-header>Rate</ion-list-header>
+
+                <ion-item>
+                    <ion-label>Fixed</ion-label>
+                    <ion-radio value="fixed"></ion-radio>
+                </ion-item>
+
+                <ion-item>
+                    <ion-label>Variable</ion-label>
+                    <ion-radio value="variable"></ion-radio>
+                </ion-item>
+
+            </ion-list>
+            <!-- <ion-item>
                 <ion-label>Rate</ion-label>
-                <ion-input type="tel" placeholder="0"></ion-input>
-            </ion-item>
+                <ion-radio ></ion-radio>
+            </ion-item> -->
 
-            <ion-item>
-                <ion-label>Notes</ion-label>
-                <ion-input placeholder="Comments and notes">
 
-                </ion-input>
-            </ion-item>
         </ion-list>
 
+        <ion-item *ngIf="rate.choice === 'fixed'">
+            <ion-label>Fixed Rate</ion-label>
+            <ion-input>
+                <ion-input style="float: right" type="tel" placeholder="0"></ion-input>
+            </ion-input>
+        </ion-item>
+
+        <ion-item *ngIf="rate.choice === 'variable'">
+            <ion-label>Variable Rate</ion-label>
+            <ion-input>
+                <ion-input style="float: right" type="tel" placeholder="0"></ion-input>
+            </ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label>Notes</ion-label>
+            <ion-input placeholder="Comments and notes">
+            </ion-input>
+        </ion-item>
         <!-- <ion-content padding> -->
         <!-- <img src="{{pathForImage(lastImage)}}" style="width: 20%" [hidden]="lastImage === null"> -->
         <!-- <h3 [hidden]="lastImage !== null">Please Select Image!</h3> -->

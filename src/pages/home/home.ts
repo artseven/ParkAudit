@@ -22,6 +22,8 @@ export class HomePage {
   loading: Loading;
   dateNow = new Date().toDateString();
   timeNow = new Date().toLocaleTimeString();
+  rate: {} = {};
+  choice = '';
   public photos: any = [];
   public base64Image: string;
 
