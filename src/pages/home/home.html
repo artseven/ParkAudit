@@ -1,6 +1,6 @@
 <ion-header>
     <ion-navbar color="dark">
-       <ion-title>
+        <ion-title>
             Auditor Area
         </ion-title>>
         <ion-buttons end>
@@ -14,8 +14,6 @@
 <ion-content class="home" padding>
 
     <h3 style="color: white">Welcome inside, {{username}}!</h3>
-
-
     <ion-card>
         <ion-card-header>
             Property Audit
@@ -24,25 +22,25 @@
 
             <ion-item>
                 <ion-label floating>Property Address</ion-label>
-                    <ion-select>
-                        <ion-option selected="true">0001 Allied (60 West Flagler Street)</ion-option>
-                        <ion-option>0002 Farovi Parking (125 NE 9th St. )
-                        </ion-option>
-                        <ion-option>0003 999 Brickell (999 Brickell Avenue)
-                        </ion-option>
-                        <ion-option>0004 Office in the Grove (2699 S. Bayshore Drive)
-                        </ion-option>
-                        <ion-option>0004A Office in the Grove (2699 S. Bayshore Drive)
-                        </ion-option>
-                        <ion-option>0005 Chino Lot (222 NE 1st Avenue)
-                        </ion-option>
-                        <ion-option>0006 N/A (R799 Brickell Plaza)
-                        </ion-option>
-                        <ion-option>0007 Grove Lot (2980 McFarlane Road)
-                        </ion-option>
-                        <ion-option>0008 Closed Property (1099 NW 14th Street)
-                        </ion-option>
-                    </ion-select>
+                <ion-select>
+                    <ion-option selected="true">0001 Allied (60 West Flagler Street)</ion-option>
+                    <ion-option>0002 Farovi Parking (125 NE 9th St. )
+                    </ion-option>
+                    <ion-option>0003 999 Brickell (999 Brickell Avenue)
+                    </ion-option>
+                    <ion-option>0004 Office in the Grove (2699 S. Bayshore Drive)
+                    </ion-option>
+                    <ion-option>0004A Office in the Grove (2699 S. Bayshore Drive)
+                    </ion-option>
+                    <ion-option>0005 Chino Lot (222 NE 1st Avenue)
+                    </ion-option>
+                    <ion-option>0006 N/A (R799 Brickell Plaza)
+                    </ion-option>
+                    <ion-option>0007 Grove Lot (2980 McFarlane Road)
+                    </ion-option>
+                    <ion-option>0008 Closed Property (1099 NW 14th Street)
+                    </ion-option>
+                </ion-select>
             </ion-item>
 
             <ion-item>
@@ -151,14 +149,13 @@
 
 
         <ion-toolbar>
-            <ion-buttons>
-                <button ion-button icon-left (click)="presentActionSheet()">
-          <ion-icon name="camera"></ion-icon>Select Image
-        </button>
-                <!-- <button ion-button icon-left (click)="uploadImage()" [disabled]="lastImage === null">
+                <button ion-button outline block (click)="presentActionSheet()">
+                  <ion-icon name="camera"></ion-icon>Select Image
+                </button>
+
+            <!-- <button ion-button icon-left (click)="uploadImage()" [disabled]="lastImage === null">
           <ion-icon name="cloud-upload"></ion-icon>Upload
         </button> -->
-            </ion-buttons>
         </ion-toolbar>
 
 
