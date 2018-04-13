@@ -1,138 +1,144 @@
 <ion-header>
-  <ion-navbar color="dark">
-    <ion-title>
-      Member Area
-    </ion-title>
-    <ion-buttons end>
-      <button ion-button (click)="logout()">
+    <ion-navbar color="dark">
+        <ion-title>
+            Member Area
+        </ion-title>
+        <ion-buttons end>
+            <button ion-button (click)="logout()">
         <ion-icon name="log-out"></ion-icon>
       </button>
-    </ion-buttons>
-  </ion-navbar>
+        </ion-buttons>
+    </ion-navbar>
 </ion-header>
 
 <ion-content class="home" padding>
-  <h3>Welcome inside, {{username}}!</h3>
-  Your Email is: {{email}}
+    <h3>Welcome inside, {{username}}!</h3>
+    Your Email is: {{email}}
 
-  <ion-card>
-    <ion-card-header>
-      Property Audit
-    </ion-card-header>
-    <ion-list>
+    <ion-card>
+        <ion-card-header>
+          Property Audit
+        </ion-card-header>
+        <ion-list inset>
 
-      <ion-item>
-          <ion-label>Property Address</ion-label>
-          <ion-select>
-            <ion-option selected="true">0001 Allied  (60 West Flagler Street)</ion-option>
-            <ion-option>0002 Farovi Parking (125 NE 9th St. )
-              </ion-option>
-            <ion-option>0003 999 Brickell  (999 Brickell Avenue)
-              </ion-option>
-            <ion-option>0004 Office in the Grove (2699 S. Bayshore Drive)
-              </ion-option>
-            <ion-option>0004A Office in the Grove (2699 S. Bayshore Drive)
-              </ion-option>
-            <ion-option>0005 Chino Lot (222 NE 1st Avenue)
-              </ion-option>
-            <ion-option>0006 N/A (R799 Brickell Plaza)
-              </ion-option>
-            <ion-option>0007 Grove Lot (2980 McFarlane Road)
-              </ion-option>
-            <ion-option>0008 Closed Property (1099 NW 14th Street)
-              </ion-option>
-        </ion-select>
-      </ion-item>
+            <ion-item>
+                <ion-label>Property Address</ion-label>
+                <ion-select>
+                    <ion-option selected="true">0001 Allied (60 West Flagler Street)</ion-option>
+                    <ion-option>0002 Farovi Parking (125 NE 9th St. )
+                    </ion-option>
+                    <ion-option>0003 999 Brickell (999 Brickell Avenue)
+                    </ion-option>
+                    <ion-option>0004 Office in the Grove (2699 S. Bayshore Drive)
+                    </ion-option>
+                    <ion-option>0004A Office in the Grove (2699 S. Bayshore Drive)
+                    </ion-option>
+                    <ion-option>0005 Chino Lot (222 NE 1st Avenue)
+                    </ion-option>
+                    <ion-option>0006 N/A (R799 Brickell Plaza)
+                    </ion-option>
+                    <ion-option>0007 Grove Lot (2980 McFarlane Road)
+                    </ion-option>
+                    <ion-option>0008 Closed Property (1099 NW 14th Street)
+                    </ion-option>
+                </ion-select>
+            </ion-item>
 
-      <ion-item>
-        <ion-label>Start Time</ion-label>
-        <ion-datetime
-        displayFormat="h:mm A"
-        pickerFormat="h mm A"
-        [(ngModel)]=timeIn>
-        </ion-datetime>
-        {{ timeIn }}
-      </ion-item>
-
-      <ion-item>
-        <ion-label>End Time</ion-label>
-        <ion-datetime
-        displayFormat="h:mm A"
-        pickerFormat="h mm A"
-        [(ngModel)]=timeOut>
-        </ion-datetime>
-        {{ timeOut }}
-      </ion-item>
-
-      <ion-item>
-        <ion-label>First Ticket</ion-label>
-        <ion-input style="text-align: right" placeholder="Ticket Input"></ion-input>
-      </ion-item>
-
-      <ion-item>
-        <ion-label>Last Ticket</ion-label>
-        <ion-input style="text-align: right" placeholder="Ticket Input"></ion-input>
-      </ion-item>
-
-      <ion-item>
-        <ion-label>Keys</ion-label>
-        <ion-input style="text-align: right" type="number" placeholder="0"></ion-input>
-      </ion-item>
-
-      <ion-item>
-        <ion-label>Validations</ion-label>
-        <ion-input style="text-align: right" type="number" placeholder="0"></ion-input>
-      </ion-item>
-
-      <ion-item>
-        <ion-label>Cars</ion-label>
-        <ion-input style="text-align: right" type="number" placeholder="0"></ion-input>
-      </ion-item>
-
-      <ion-item>
-        <ion-label>Type of Visit</ion-label>
-        <ion-select>
-          <ion-option value="f" selected="true">Regular</ion-option>
-          <ion-option value="m">Random</ion-option>
-        </ion-select>
-      </ion-item>
-
-      <ion-item>
-        <ion-label>Rate</ion-label>
-        <ion-input style="text-align: right" type="number" placeholder="0"></ion-input>
-      </ion-item>
-
-      <ion-item>
-        <ion-label>Notes</ion-label>
-        <ion-input placeholder="Comments and notes">
-
-        </ion-input>
-      </ion-item>
-    </ion-list>
-
-    <ion-content padding>
-        <img src="{{pathForImage(lastImage)}}" style="width: 20%" [hidden]="lastImage === null">
-        <h3 [hidden]="lastImage !== null">Please Select Image!</h3>
-      </ion-content>
+            <ion-item>
+                Date
+                <span style="float: right">{{ dateNow }}</span>
+            </ion-item>
 
 
-    <ion-toolbar>
-      <ion-buttons>
-        <button ion-button icon-left (click)="presentActionSheet()">
+            <ion-item>
+                Start Time
+                <span style="float: right"> {{ timeNow }}</span>
+            </ion-item>
+
+            <ion-item>
+                <ion-label>End Time</ion-label>
+                <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]=timeOut>
+                </ion-datetime>
+                {{ timeOut }}
+            </ion-item>
+
+            <ion-item>
+                <ion-label>First Ticket</ion-label>
+                <ion-input style="float: right" placeholder="Ticket Input"></ion-input>
+            </ion-item>
+
+            <ion-item>
+                <ion-label>Last Ticket</ion-label>
+                <ion-input style="float: right" placeholder="Ticket Input"></ion-input>
+            </ion-item>
+
+            <ion-item>
+                <ion-label>Keys</ion-label>
+                <ion-input style="float: right" type="tel" placeholder="0"></ion-input>
+            </ion-item>
+
+            <ion-item>
+                <ion-label>Validations</ion-label>
+                <ion-input style="float: right" type="tel" placeholder="0"></ion-input>
+            </ion-item>
+
+            <ion-item>
+                <ion-label>Cars</ion-label>
+                <ion-input style="float: right" type="tel" placeholder="0"></ion-input>
+            </ion-item>
+
+            <ion-item>
+                <ion-label>Type of Visit</ion-label>
+                <ion-select>
+                    <ion-option value="f" selected="true">Regular</ion-option>
+                    <ion-option value="m">Random</ion-option>
+                </ion-select>
+            </ion-item>
+
+            <ion-item>
+                <ion-label>Rate</ion-label>
+                <ion-input type="tel" placeholder="0"></ion-input>
+            </ion-item>
+
+            <ion-item>
+                <ion-label>Notes</ion-label>
+                <ion-input placeholder="Comments and notes">
+
+                </ion-input>
+            </ion-item>
+        </ion-list>
+
+        <!-- <ion-content padding> -->
+        <!-- <img src="{{pathForImage(lastImage)}}" style="width: 20%" [hidden]="lastImage === null"> -->
+        <!-- <h3 [hidden]="lastImage !== null">Please Select Image!</h3> -->
+        <!-- </ion-content> -->
+
+        <ion-col col-6 *ngFor="let photo of photos; let i = index">
+            <ion-card class="block">
+                <!-- <ion-icon name="trash" class="deletion" (click)="deletePhoto(id)"> -->
+                <img [src]="photo" *ngIf="photo" />
+                <!-- </ion-icon> -->
+            </ion-card>
+        </ion-col>
+
+
+        <ion-toolbar>
+            <ion-buttons>
+                <button ion-button icon-left (click)="presentActionSheet()">
           <ion-icon name="camera"></ion-icon>Select Image
         </button>
-        <button ion-button icon-left (click)="uploadImage()" [disabled]="lastImage === null">
+                <!-- <button ion-button icon-left (click)="uploadImage()" [disabled]="lastImage === null">
           <ion-icon name="cloud-upload"></ion-icon>Upload
-        </button>
-      </ion-buttons>
-    </ion-toolbar>
+        </button> -->
+            </ion-buttons>
+        </ion-toolbar>
 
 
-    <button block ion-button color="secondary" (click)="submit">
+        <button block ion-button color="secondary" (click)="submit()">
       Submit
     </button>
-  </ion-card>
+    </ion-card>
 
-  <!-- <ion-searchbar animated=true>
+    <!-- <ion-searchbar animated=true>
   </ion-searchbar> -->
 </ion-content>
